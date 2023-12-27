@@ -2,9 +2,10 @@
   "name": "project-bankrank",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
+  "main": "scraper.js",
   "scripts": {
-    "scrape": "node scraper.ts"
+    "scrape": "node scraper.js"
   },
   "keywords": [],
   "author": "",

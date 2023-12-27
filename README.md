@@ -8,3 +8,8 @@
 - Playwright
 `npm init playwright@latest`
 
+
+### Conventions
+- Template Directories use `PascalCase` 
+- variable, function, and file names use `camelCase`
+- attributes which correspond with a database field use `lower_case_with_underscores`
