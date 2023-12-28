@@ -2,7 +2,6 @@ import { chromium } from 'playwright';
 
 const americaFirstShareChecking1 = async (launchSettings, viewPort, throwError = false) => {
   try {
-
     const browser = await chromium.launch({ headless: true });  // Or 'firefox' or 'webkit'.
     // const context = await browser.createIncognitoBrowserContext();
     const page = await browser.newPage();
