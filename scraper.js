@@ -18,11 +18,11 @@ try {
       writeBeginningOrEndingErrorLogMessage(errorLogTimestamp, true);
 
       let errorLogCount = 0;
-      let successLogCount = 0;
+      let successfulLogCount = 0;
 
       responseFromAllTemplates.forEach((response, index) => {
         if (response.success) {
-          successLogCount++;
+          successfulLogCount++;
           console.log("\nres: ", response)
           writeDataToBankDataCsv(response)
         } else {
@@ -33,9 +33,9 @@ try {
       })
       writeBeginningOrEndingErrorLogMessage(errorLogTimestamp, false);
       if (errorLogCount > 0) {
-        console.log(`\n === ${errorLogCount} errors were logged to /logFiles/errors.txt. You may want to look into them. === `)
+        console.log(`\n${errorLogCount} errors were logged to /logFiles/errors.txt. You may want to look into them.`)
       }
-      console.log(`\nFinished Sourcing Data. Successfully obtained data for ${successCount} products.`)
+      console.log(`\nFinished Sourcing Data. Successfully obtained data for ${successfulLogCount} product(s).`)
       return;
     }).catch(e => console.log('eee: ', e))
 } catch (e) {
