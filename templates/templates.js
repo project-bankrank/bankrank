@@ -21,8 +21,11 @@ For instance, a bank may have the following 4 products: Savings, Checking, MMA, 
   - /templates/exampleBank/cdTier3.js
 */
 
+
 import americaFirst from './AmericaFirst/index.js';
+import pncStandardSavings from './PNC/index.js';
 
 export default [
-  ...Object.values(americaFirst)
+  ...Object.values(americaFirst),
+  ...Object.values(pncStandardSavings),
 ]

@@ -4,12 +4,11 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 
-const americaFirstShareSavings1 = async (launchSettings, viewPort, throwError = false) => {
-  throwError = true;
+const americaFirstShareSavings1 = async (headless = true, viewPort, throwError = false) => {
+  // Throw Error is a variable used to test the error handling.
+  if (throwError) throw new Error("Some error");
   try {
-
-    if (throwError) throw new Error("Some error");
-    const browser = await chromium.launch({ headless: true });  // Or 'firefox' or 'webkit'.
+    const browser = await chromium.launch({ headless });  // Or 'firefox' or 'webkit'.
     // const context = await browser.createIncognitoBrowserContext();
     const page = await browser.newPage();
     
@@ -26,26 +25,29 @@ const americaFirstShareSavings1 = async (launchSettings, viewPort, throwError = 
     const minBalanceSelector2 = '#Savings-Account-Rates-modelContent > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(5)';
     const minBalanceElement2 = await page.waitForSelector(minBalanceSelector2);
     const minBalance2 = await minBalanceElement2.evaluate(el => el.textContent.trim());
-    const minBalance = Math.max(Number(minBalance1.slice(1)), Number(minBalance2.slice(1)))
+    const minimum_balance = Math.max(Number(minBalance1.slice(1)), Number(minBalance2.slice(1)))
   
-    const maxBalanceSelector = '#Savings-Account-Rates-modelContent > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(5)';
-    const maxBalanceElement = await page.waitForSelector(maxBalanceSelector);
-    const maxBalance = await maxBalanceElement.evaluate(el => el.textContent.trim());
+    // const maxBalanceSelector = '#Savings-Account-Rates-modelContent > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(5)';
+    // const maxBalanceElement = await page.waitForSelector(maxBalanceSelector);
+    // const maximum_balance = await maxBalanceElement.evaluate(el => el.textContent.trim());
+    const maximum_balance = -1;
     
     const productNameSelector = '#Savings-Account-Rates-modelContent > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1)';
     const productNameElement = await page.waitForSelector(productNameSelector);
-    const productName = await productNameElement.evaluate(el => el.textContent.trim());
+    const product_name = await productNameElement.evaluate(el => el.textContent.trim());
   
     await browser.close();
   
     return {
+      institution_name: "America First",
+      account_type: "Savings", 
+      success: true,
+      error: null,
+      path: __filename,
       apy,
-      productName,
-      minBalance,
-      maxBalance,
-      success: false,
-      error: '',
-      path: __filename
+      product_name,
+      minimum_balance,
+      maximum_balance,
     };
   } catch (e) {
     // Do not include any console logs of errors. Those are handled in the scraper.js file.

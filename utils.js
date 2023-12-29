@@ -30,9 +30,10 @@ export const createNewBankDataCsv = () => {
 }
 
 export const writeDataToBankDataCsv = (productData) => {
-  const { institutionName, productName, apy, minimum_balance, maximum_balance } = productData;
-  if (productName && apy && minimum_balance) {
-    fs.appendFileSync(bankDataLogPath, `bank, Account Type, ${productName}, ${apy}, ${minimum_balance}, ${maximum_balance}, \n`, function (err) {
+  const { institution_name, account_type, product_name, apy, minimum_balance, maximum_balance } = productData;
+  if (product_name && apy && minimum_balance && institution_name) {
+    const rowOfData = `${institution_name},${account_type},${product_name},${apy},"${minimum_balance}","${maximum_balance}"\n`;
+    fs.appendFileSync(bankDataLogPath, rowOfData, function (err) {
       if (err) throw err;
     });
   }

@@ -23,7 +23,6 @@ try {
       responseFromAllTemplates.forEach((response, index) => {
         if (response.success) {
           successfulLogCount++;
-          console.log("\nres: ", response)
           writeDataToBankDataCsv(response)
         } else {
           errorLogCount++;
