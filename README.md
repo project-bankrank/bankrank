@@ -1,3 +1,9 @@
+# Table of Contents
+- [Project Background](https://github.com/project-bankrank/bankrank#background)
+- [Roadmap](https://github.com/project-bankrank/bankrank#project-roadmap)
+- [Contribution Guide](https://github.com/project-bankrank/bankrank#contributing)
+- [Getting Started](https://github.com/project-bankrank/bankrank#getting-started)
+
 ## Background
 There are approximately 4,136 [banks](https://banks.data.fdic.gov/explore/historical/?displayFields=STNAME%2CTOTAL%2CBRANCHES%2CNew_Char%2COFFICES%2CUNIT%2CBRANCHIN&selectedEndDate=2022&selectedReport=CBS&selectedStartDate=1934&selectedStates=0&sortField=YEAR&sortOrder=desc) and 4,645 [credit unions](https://ncua.gov/analysis/credit-union-corporate-call-report-data/quarterly-data-summary-reports) in the United States. These institutions offer [deposit accounts](https://en.wikipedia.org/wiki/Deposit_account), and most commonly offer at least one of the following: [Savings](https://en.wikipedia.org/wiki/Savings_account), [Checking](https://en.wikipedia.org/wiki/Transaction_account), [Money Market](https://en.wikipedia.org/wiki/Money_market_account), or [Certificate of Deposit](https://en.wikipedia.org/wiki/Time_deposit). The primary difference between banks and credit unions is that banks are for-profit institutions whereas credit unions are [not-for-profit, cooperative, tax-exempt organizations](https://en.wikipedia.org/wiki/Credit_unions_in_the_United_States).
 
@@ -31,6 +37,8 @@ Once the backend services are developed, there is an opportunity to provide addi
 - A web application which allows researchers to query bank account data based on certain parameters
 - A mobile app to customize a search based on a consumer's specific preferences, and get notified when a better product becomes available
 - A tool to automate the process of opening new accounts and transferring funds
+
+## Contributing
 
 ## Getting Started
 
