@@ -11,27 +11,26 @@ Despite the increased competition, the top banks offer some of the worst interes
 
 ## Problems with Existing Solutions
 There are many tools and services available which attempt to improve transparency in deposit account rates and fees, but all struggle from one or more of the following limitations:
-- Closed source/methodologies: Many bank aggregation sites do not disclose how they rank or rate bank accounts. Bank Rank seeks to aggregate as much data as possible so users can make an informed decision.
-- Conflicts of interest: many bank review sites will receive referral bonuses for referring people to certain accounts. This creates a conflict of interest, since these sites ultimately serve the banks that pay them, not the consumers doing research. 
-- Pay-to-win features: Some sites will aggregate products, but provide premium placement for sponsored products, putting them ahead of products which are objectively better.
-- Incomplete data sets: Other tools may have incomplete data or allow banks to pay for exclusivity, recommending users towards an inferior product.
+- Closed source/methodologies: Many bank aggregation sites do not disclose how they rank or rate bank accounts. Bank Rank seeks to aggregate as much data as possible so users can make an informed decision
+- Conflicts of interest: many bank review sites will receive referral bonuses for referring people to certain accounts. This creates a conflict of interest, since these sites ultimately serve the banks that pay them, not the consumers doing research
+- Pay-to-win features: Some sites will aggregate products, but provide premium placement for sponsored products, putting them ahead of products which are objectively better
+- Incomplete data sets: Other tools may have incomplete data or allow banks to pay for exclusivity, recommending users towards an inferior product
 
 ## Project Roadmap
 
-#### Phase 1 [In Progress]: Scraping Engine & Templates
-The initial phase requires developing the infrastructure to monitor the financial data. Most banks publish their product information on their websites, so by creating a scraping engine, Bank Rank can monitor changes in product information. The engine reads templates, which are instructions for navigating to the web page(s) which contain information about a deposit account. 
+### Phase 1 [In Progress]: Scraping Engine & Templates
+The initial phase requires developing the infrastructure to monitor financial data. Most banks publish their product information on their websites, so by creating a `scraping engine`, Bank Rank can monitor changes in product information. The engine utilizes reads `template files`, which tell the engine how to navigate to the web pages and extract information about a deposit account. 
 
 Banks tend to change their websites infrequently, so once a template is created, it can be used repeatedly to monitor changes in a given product. 
 
-Developing the engine and templates to monitor all of the banks is the primary goal of this phase. 
-
-#### Phase 2: API & Database
+### Phase 2: Backend API & Database
 As the engine and templates are developed, work can begin on an API and database to provide a method for saving results and querying data. The engine will continue to output results in a `csv` file, but maintaining a historical record of rate changes can provide additional benefit to regulators, researchers, and consumers. 
 
-#### Phase 3: Consumer Tools 
+### Phase 3: Consumer Tools 
 Once the backend services are developed, there is an opportunity to provide additional tools to automate workflows a user may encounter when shopping for deposit accounts. For example:  
 - A web application which allows researchers to query bank account data based on certain parameters
 - A mobile app to customize a search based on a consumer's specific preferences, and get notified when a better product becomes available
+- A tool to automate the process of opening new accounts and transferring funds
 
 ## Getting Started
 
