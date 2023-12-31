@@ -5,15 +5,16 @@ Within the scope of this project, we use the term `bank` to refer to all institu
 
 It is common for banks to offer multiple tiers of an account in order to incentivize customers to deposit more money with the bank. To give an approximation of how large the deposit account marketplace is: if each bank were to offer 2 tiers of each type of bank account, there would be ~64,000 accounts in the United States, each with different rates and fees which can change at any time, for any reason.
 
-Because these accounts are regulated and federally insured, they are effectively risk-free financial commodities, which compete on fees and interest rates. With the technological advancements in mobile technology, banks are no longer tied to geographic regions, and can compete nationally for deposits. This has dramatically increased competition.
+Because these accounts are regulated and federally insured, they are effectively risk-free financial commodities, which compete primarily on fees and interest rates. With the technological advancements in mobile technology, banks are no longer tied to geographic regions, and can compete nationally for deposits. This has dramatically increased competition.
 
-Despite the increased competition, the top banks offer some of the worst interest rates, highest fees, and tightest restrictions, compared to [national averages](https://www.fdic.gov/resources/bankers/national-rates/index.html) and smaller, regional banks. This is partially due to the [billions](https://www.google.com/search?hl=en&q=how%20much%20do%20banks%20spend%20on%20advertising) that large institutions invest in advertising and marketing, which smaller banks cannot compete against. Instead, smaller banks compete by offering better rates, lower fees, and more accessible products. Due to the tens of thousands of products to compare, it is infeasible for an individual to monitor changes across the marketplace without assistance. There are many tools and services available which attempt to improve transparency in deposit account rates and fees, but all struggle from one or more of the following limitations:
-- Conflicts of interest (e.g. primarily funded or owned by a large financial institution)
-- Pay-to-win features (e.g. prioritizing inferior products which pay for preferred placement)
-- Incomplete data sets (e.g. excluding -- sometimes intentionally -- superior products from their listings)
+Despite the increased competition, the top banks offer some of the worst interest rates, highest fees, and tightest restrictions, compared to [national averages](https://www.fdic.gov/resources/bankers/national-rates/index.html). This is partially due to the [billions](https://www.google.com/search?hl=en&q=how%20much%20do%20banks%20spend%20on%20advertising) that large banks invest in advertising and marketing. Because they spend less on marketing and advertising, smaller banks are able to offer better rates, lower fees, and more accessible products. But due to the tens of thousands of products to compare, it is infeasible for an individual to monitor changes across the marketplace without assistance. Bank Rank seeks to provide a comprehensive solution to help consumers identify the best financial products for their personal financial situation. 
 
-## Goal
-The goal of Project Bankrank is to create open tools to monitor as many deposit products as possible so that consumers have increased transparency when shopping for financial products, while avoiding the issues with existing solutions outlined above. 
+## Problems with Existing Solutions
+There are many tools and services available which attempt to improve transparency in deposit account rates and fees, but all struggle from one or more of the following limitations:
+- Closed source/methodologies: Many bank aggregation sites do not disclose how they rank or rate bank accounts. Bank Rank seeks to aggregate as much data as possible so users can make an informed decision.
+- Conflicts of interest: many bank review sites will receive referral bonuses for referring people to certain accounts. This creates a conflict of interest, since these sites ultimately serve the banks that pay them, not the consumers doing research. 
+- Pay-to-win features: Some sites will aggregate products, but provide premium placement for sponsored products, putting them ahead of products which are objectively better.
+- Incomplete data sets: Other tools may have incomplete data or allow banks to pay for exclusivity, recommending users towards an inferior product.
 
 ## Project Roadmap
 
