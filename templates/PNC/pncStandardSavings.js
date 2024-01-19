@@ -7,8 +7,8 @@ const __filename = fileURLToPath(import.meta.url);
 const pncStandardSavings = async (headless = true, viewPort, throwError = false) => {
   // Throw Error is a variable used to test the error handling.
   if (throwError) throw new Error("Some error");
+  const browser = await chromium.launch({ headless });  // Or 'firefox' or 'webkit'.
   try {
-    const browser = await chromium.launch({ headless });  // Or 'firefox' or 'webkit'.
     // const context = await browser.createIncognitoBrowserContext();
     const page = await browser.newPage();
 
@@ -52,6 +52,9 @@ const pncStandardSavings = async (headless = true, viewPort, throwError = false)
       error: e.stack,
       path: __filename
     }
+  } finally {
+    console.log("closing ")
+    await browser.close();
   }
 };
 

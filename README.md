@@ -41,15 +41,12 @@ Once the backend services are developed, there is an opportunity to provide addi
 ## Contributing
 
 ## Getting Started
-
-### Requirements
-- NPM version 10.2.3+  
-`npm -v`
-- Node version 20.10.0+  
-`node -v`
-- [Playwright](https://playwright.dev/) for scraping  
-`npm init playwright@latest`
-
+1. Clone the repository locally with `git clone https://github.com/project-bankrank/bankrank.git`
+2. Ensure that you have `npm` version 10.2.3+ and `node` version 20.10.0+ installed locally by verifying the versions with the following commands:
+- `npm -v`
+- `node -v`
+3. Install necessary dependencies with `npm i`
+4. Run `npm run scrape` to test
 
 ### Conventions
 - Template Directories use `PascalCase` 
@@ -57,13 +54,13 @@ Once the backend services are developed, there is an opportunity to provide addi
 - attributes which correspond with a database field use `lower_case_with_underscores`
 
 ### List of Zip Codes
-94507 - Alamo, CA
-Chicago, IL
-New York, New York,
-Atlanta, GA,
-Fort Worth, TX
-Boston, MA
-Las Vegas, NV
+94507 - Alamo, CA  
+Chicago, IL  
+New York, New York,  
+Atlanta, GA,  
+Fort Worth, TX  
+Boston, MA  
+Las Vegas, NV  
 
 
 ### List of Institutions
