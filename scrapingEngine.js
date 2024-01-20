@@ -1,4 +1,4 @@
-import templatesToScrape from './templates/templates.js';
+import templatesToScrape from './productScripts/productScripts.js';
 import {
   writeBeginningOrEndingErrorLogMessage,
   writeErrorLog,
@@ -7,7 +7,7 @@ import {
 } from './utils.js';
 
 console.log(`=== Preparing Scraping Engine. ===`);
-console.log(`\n=== Found ${templatesToScrape.length} products to look up. ===`);
+console.log(`\n=== Found ${templatesToScrape.length} products to look up. ===\n`);
 
 try {
   createNewBankDataCsv();
@@ -32,7 +32,7 @@ try {
       })
       writeBeginningOrEndingErrorLogMessage(errorLogTimestamp, false);
       if (errorLogCount > 0) {
-        console.log(`\n${errorLogCount} errors were logged to /logFiles/errors.txt. You may want to look into them.`)
+        console.log(`\n${errorLogCount} error(s) were logged to /outputs/errors.txt. You may want to look into them.`)
       }
       console.log(`\nFinished Sourcing Data. Successfully obtained data for ${successfulLogCount} product(s).`)
       return;

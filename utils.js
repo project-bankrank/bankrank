@@ -1,7 +1,7 @@
 import fs from 'fs';
 
-const errorLogPath = "./logFiles/errors.txt";
-const bankDataLogPath = "./logFiles/bank-data.csv";
+const errorLogPath = "./outputs/errors.txt";
+const bankDataLogPath = "./outputs/bank-data.csv";
 const bankDataCsvColumnHeaders = "institution_name, account_type, account_name, apy, minimum_balance, maximum_balance\n"; // The \n at the end is important so that the first row of data does not append to the headers.
 
 export const writeBeginningOrEndingErrorLogMessage = (errorLogTimestamp, startOfLogs) => {

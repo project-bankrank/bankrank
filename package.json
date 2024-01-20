@@ -5,7 +5,7 @@
   "type": "module",
   "main": "scraper.js",
   "scripts": {
-    "scrape": "node scraper.js"
+    "engine": "node scrapingEngine.js"
   },
   "keywords": [],
   "author": "",
