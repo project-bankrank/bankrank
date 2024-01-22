@@ -23,9 +23,11 @@ For instance, a bank may have the following 4 products: Savings, Checking, MMA, 
 
 
 import americaFirst from './AmericaFirst/index.js';
+import bankOfAmericaSavings from './BankOfAmerica/index.js';
 import pncStandardSavings from './PNC/index.js';
 
 export default [
   ...Object.values(americaFirst),
   ...Object.values(pncStandardSavings),
+  ...Object.values(bankOfAmericaSavings),
 ]

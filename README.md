@@ -1,9 +1,9 @@
 # Table of Contents
 - [Project Background](#background)
+- [Architecture & Logic Flow](#logic-flow)
+- [Getting Started Locally](#getting-started)
 - [Roadmap](#project-roadmap)
 - [Contribution Guide](#contributing)
-- [Getting Started](#getting-started)
-- [Architecture & Logic Flow](#logic-flow)
 
 # Background <a name="background"></a>
 There are approximately 4,136 [banks](https://banks.data.fdic.gov/explore/historical/?displayFields=STNAME%2CTOTAL%2CBRANCHES%2CNew_Char%2COFFICES%2CUNIT%2CBRANCHIN&selectedEndDate=2022&selectedReport=CBS&selectedStartDate=1934&selectedStates=0&sortField=YEAR&sortOrder=desc) and 4,645 [credit unions](https://ncua.gov/analysis/credit-union-corporate-call-report-data/quarterly-data-summary-reports) in the United States. These institutions offer [deposit accounts](https://en.wikipedia.org/wiki/Deposit_account), and most commonly offer at least one of the following: [Savings](https://en.wikipedia.org/wiki/Savings_account), [Checking](https://en.wikipedia.org/wiki/Transaction_account), [Money Market](https://en.wikipedia.org/wiki/Money_market_account), or [Certificate of Deposit](https://en.wikipedia.org/wiki/Time_deposit). The primary difference between banks and credit unions is that banks are for-profit institutions whereas credit unions are [not-for-profit, cooperative, tax-exempt organizations](https://en.wikipedia.org/wiki/Credit_unions_in_the_United_States).
@@ -41,16 +41,56 @@ Once the backend services are developed, there is an opportunity to provide addi
 
 # Contributing <a name="contributing"></a>
 
-This project is dependent on the contributions of volunteers like you. Thank you for your interest. No matter how technical you are, there are plenty of ways to get involved. 
+Thank you for your interest in contributing! This project is dependent on the contributions of volunteers like you. No matter how technical you are, there are plenty of ways to get involved. 
 
-#@ Contributor Priorities
-1. The most valuable way you can contribute is to provide new productScripts or scripts
-#### 
+## Ways to Contribute
+1. [Submit New Product Scripts (Technical)](#submitting)
+2. [Validate Existing Product Scripts (Non-Technical)](#validating)
+3. [Engine Enhancements (Technical)](#engine)
+4. [Improving Test Coverage (Technical)](#test)
+4. [Backlog "Todos" (Technical)](#todos)
+
+### Submit New Product Scripts (Technical)<a name="submitting"></a>
+The best way to contribute to the project is to identify product offerings which are not currently scraped by Bank Rank, and submit them to the project. This process involves recording the steps you would take to normally look up the details about an account using a tool called playwright codegen.
+
+First, identify a product offering which is not included in this listing. You can search for `false` to find products which are not currently being scraped. 
+
+Next, install [playwright](https://playwright.dev/docs/intro#installing-playwright) which will come with a tool called `codegen`.
+- `npm init playwright@latest`  
+
+Once installed, plan out the steps involved with loading the web page that has the information for the product. When we run codegen, it will record every URL we visit and every interaction with the browser. For instance, your plan may involve the following steps:
+1. Navigate to www.wellsFargo.com
+2. Select the `bank` tab and click `savings accounts` from the dropdown
+3. Enter a zip code and click the submit button
+4. Scroll down to the second row of the third table to find the APY
+
+Once you've got your flow prepared, load codegen with `npx playwright codegen`. This will open a new web browser and an "inspector" which will track your flow and automatically write the code needed. 
+
+When you are ready to begin, verify that it is recording by checking whether the recording button is red (recording) or gray (not recording). You can click this at any point to pause your recording flow. Start recording and navigate to the page you want. Navigate to the page containing the product information. At a minimum, try to obtain the following pieces of information:
+- Name of the product
+- Name of the financial institution
+- minimum account balance to open the account `AND` earn interest `AND` not pay a monthly fee
+- maximum account balance to earn interest
+- Annual Percentage Yield value (not the interest rate)
+
+Stop the recording, and export the script as `Target > NodeJS > Library`.
+
+Go to your editor and create a new file or open the existing file where you will place this script.
+
+Click into the inspector. Highlight everything and copy it, then paste everything in the file. 
+
+### Clean Up Phase
+
+
+<!-- ### Validate Existing Product Scripts (Less-Technical) <a name="validating"></a>
+### Engine Enhancements (Technical) <a name="engine"></a>
+### Improving Test Coverage (Technical) <a name="tests"></a>
+### Backlog "Todos" (Technical) <a name="todos"></a>
 productScripts
 Typescript
 Prettier/Linter
 Unit Tests
-Engine Improvements
+Engine Improvements -->
 
 # Getting Started <a name="getting-started"></a>
 1. Clone the repository locally with `git clone https://github.com/project-bankrank/bankrank.git`
