@@ -1,4 +1,5 @@
-import templatesToScrape from '../productScripts/productScripts.js';
+// import templatesToScrape from '../productScripts/productScripts.js';
+import templatesToScrape from './productScripts/productScripts.js';
 import { ProductScriptResponseSuccess } from './constants';
 import {
   writeBeginningOrEndingErrorLogMessage,
@@ -7,14 +8,13 @@ import {
   writeDataToBankDataCsv
 } from './utils.js';
 
-
 console.log(`=== Preparing Scraping Engine. ===`);
 console.log(`\n=== Found ${templatesToScrape.length} products to look up. ===\n`);
 
 try {
   createNewBankDataCsv();
   // Todo: This may not actually be async since it's in a foreach.
-  Promise.all(templatesToScrape.map(template => template()))
+  Promise.all(templatesToScrape.map((template: Function) => template()))
     .then(responseFromAllTemplates => {
       const errorLogTimestamp = new Date().toString();
       writeBeginningOrEndingErrorLogMessage(errorLogTimestamp, true);
@@ -22,7 +22,7 @@ try {
       let errorLogCount = 0;
       let successfulLogCount = 0;
 
-      responseFromAllTemplates.forEach((response: ProductScriptResponseSuccess, index) => {
+      responseFromAllTemplates.forEach((response: ProductScriptResponseSuccess, index: number) => {
         if (response?.success) {
           successfulLogCount++;
           writeDataToBankDataCsv(response)

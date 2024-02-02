@@ -5,7 +5,7 @@
     "target": "ES2020",
     "sourceMap": true,
     "baseUrl": "./src",
-    "outDir": "build",
+    "outDir": "build/src",
     "allowJs": true,
     "noImplicitAny": true,
     "skipLibCheck": true
