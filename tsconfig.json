@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
-    "module": "ES2020",
-    "moduleResolution": "Bundler",
-    "target": "ES2020",
-    "sourceMap": true,
-    "baseUrl": "./src",
-    "outDir": "build/src",
     "allowJs": true,
+    "baseUrl": "./src",
+    "esModuleInterop": true,
+    "module": "ES2020",
+    "moduleResolution": "Node",
     "noImplicitAny": true,
+    "noUnusedParameters": true,
+    "outDir": "build/src",
     "skipLibCheck": true,
-    "noEmit": true,
-    "allowImportingTsExtensions": true
+    "sourceMap": true,
+    "target": "ES2020"
   },
   "include": ["src/"],
   "exclude": ["**/*.spec.ts"]

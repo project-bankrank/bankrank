@@ -1,6 +1,7 @@
 // import templatesToScrape from '../productScripts/productScripts.js';
+// Todo: How can i configure my TS to allow the imports to drop the .js extension, or use .ts?
 import templatesToScrape from './productScripts/productScripts.js';
-import { ProductScriptResponseSuccess } from './constants';
+import { ProductScriptResponseSuccess } from './types';
 import {
   writeBeginningOrEndingErrorLogMessage,
   writeErrorLog,
@@ -22,7 +23,7 @@ try {
       let errorLogCount = 0;
       let successfulLogCount = 0;
 
-      responseFromAllTemplates.forEach((response: ProductScriptResponseSuccess, index: number) => {
+      responseFromAllTemplates.forEach((response: ProductScriptResponseSuccess) => {
         if (response?.success) {
           successfulLogCount++;
           writeDataToBankDataCsv(response)

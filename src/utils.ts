@@ -1,4 +1,4 @@
-import { LogErrors, ProductData } from 'constants.ts';
+import { LogErrors, ProductData } from './types';
 import fs from 'fs';
 
 const outputsPath = './outputs';
@@ -23,7 +23,6 @@ export const writeErrorLog = (errorObject: LogErrors) => {
   }
 
   fs.appendFile(errorLogPath, errorStringToWrite, (err: any) => {
-    console.log("writing " + errorStringToWrite + " to " + errorLogPath)
     if (err) throw err;
   });
 }

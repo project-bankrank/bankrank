@@ -9,7 +9,7 @@
     "compileTypescript": "tsc",
     "copyNodeModulesToBuildDirectory": "cp package*.json build",
     "installPackagesInBuildDirectory": "cd build && npm ci --production && cd ..",
-    "scrapeProducts": "node build/src/scrapingEngine.js"
+    "scrapeProducts": "node build/src/scrapingEngine"
   },
   "keywords": [],
   "author": "",
