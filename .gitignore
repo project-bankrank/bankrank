@@ -3,3 +3,4 @@ node_modules/
 outputs
 build
 copy2.js
+copy.js
