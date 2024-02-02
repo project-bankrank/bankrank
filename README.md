@@ -1,8 +1,8 @@
 # Table of Contents
-- [Project Background](#background)
+- [Background](#background)
+- [Project Bank Rank](#project-bankrank)
 - [Architecture & Logic Flow](#logic-flow)
 - [Getting Started Locally](#getting-started)
-- [Roadmap](#project-roadmap)
 - [Contribution Guide](#contributing)
 
 # Background <a name="background"></a>
@@ -16,28 +16,18 @@ Because these accounts are regulated and federally insured, they are effectively
 
 Despite the increased competition, the top banks offer some of the worst interest rates, highest fees, and tightest restrictions, compared to [national averages](https://www.fdic.gov/resources/bankers/national-rates/index.html). This is partially due to the [billions](https://www.google.com/search?hl=en&q=how%20much%20do%20banks%20spend%20on%20advertising) that large banks invest in advertising and marketing. Because they spend less on marketing and advertising, smaller banks are able to offer better rates, lower fees, and more accessible products. But due to the tens of thousands of products to compare, it is infeasible for an individual to monitor changes across the marketplace without assistance. Bank Rank seeks to provide a comprehensive solution to help consumers identify the best financial products for their personal financial situation. 
 
-## Problems with Existing Solutions
+## Problems with Existing Solutions<a name="existing-problems"></a>
 There are many tools and services available which attempt to improve transparency in deposit account rates and fees, but all struggle from one or more of the following limitations:
 - Closed source/methodologies: Many bank aggregation sites do not disclose how they rank or rate bank accounts. Bank Rank seeks to aggregate as much data as possible so users can make an informed decision
 - Conflicts of interest: many bank review sites will receive referral bonuses for referring people to certain accounts. This creates a conflict of interest, since these sites ultimately serve the banks that pay them, not the consumers doing research
 - Pay-to-win features: Some sites will aggregate products, but provide premium placement for sponsored products, putting them ahead of products which are objectively better
 - Incomplete data sets: Other tools may have incomplete data or allow banks to pay for exclusivity, recommending users towards an inferior product
 
-# Project Roadmap <a name="project-roadmap"></a>
+# Project Bank Rank <a name="project-bankrank"></a>
 
-## Phase 1 [In Progress]: Scraping Engine & productScripts
-The initial phase requires developing the infrastructure to monitor financial data. Most banks publish their product information on their websites, so by creating a `scraping engine`, Bank Rank can monitor changes in product information. The engine utilizes reads `template files`, which tell the engine how to navigate to the web pages and extract information about a deposit account. 
+Bank Rank is made up of 2 main components: A web automation tool and product scripts. The Bank Rank engine leverages [Playwright](https://playwright.dev/) for web automation, which reads the scripts contained from the `productScripts` directory. These scripts tell the Bank Rank engine how to navigate across the web and where to extract information about various financial products. 
 
-Banks tend to change their websites infrequently, so once a template is created, it can be used repeatedly to monitor changes in a given product. 
-
-## Phase 2: Backend API & Database
-As the engine and productScripts are developed, work can begin on an API and database to provide a method for saving results and querying data. The engine will continue to output results in a `csv` file, but maintaining a historical record of rate changes can provide additional benefit to regulators, researchers, and consumers. 
-
-## Phase 3: Consumer Tools 
-Once the backend services are developed, there is an opportunity to provide additional tools to automate workflows a user may encounter when shopping for deposit accounts. For example:  
-- A web application which allows researchers to query bank account data based on certain parameters
-- A mobile app to customize a search based on a consumer's specific preferences, and get notified when a better product becomes available
-- A tool to automate the process of opening new accounts and transferring funds
+By maintaining an open list of product scripts, regulators, researchers, and consumers can have access to the entire market of financial products, while avoiding all of the [existing problems](#existing-problems) with current solutions. While bank rates and terms update quite often, banks don't change their website layout as frequently, making it trivial for the Bank Rank community to update the product scripts as needed.
 
 # Contributing <a name="contributing"></a>
 
