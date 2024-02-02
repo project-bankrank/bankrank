@@ -2,3 +2,4 @@ node_modules/
 /playwright/.cache/
 outputs
 build
+copy2.js
