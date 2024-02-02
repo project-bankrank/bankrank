@@ -1,0 +1,8 @@
+- integrate linter
+- integrate prettier
+- Move Monitoring section to a csv file at the root
+- make a script to create a new bank structure and add it to the CSV
+- Finalize the contribution section
+- Make a video for the contribution section
+- Add screenshots for the getting started section
+- Implement unit testing framework (Jest)
