@@ -3,15 +3,22 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "scraper.js",
+  "types": "build/scrapingEngine",
   "scripts": {
-    "engine": "node scrapingEngine.js"
+    "engine": "npm run compileTypescript && npm run copyNodeModulesToBuildDirectory && npm run installPackagesInBuildDirectory && npm run scrapeProducts",
+    "compileTypescript": "tsc",
+    "copyNodeModulesToBuildDirectory": "cp package*.json build",
+    "installPackagesInBuildDirectory": "cd build && npm ci --production && cd ..",
+    "scrapeProducts": "node build/src/scrapingEngine.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.40.1",
-    "@types/node": "^20.10.5"
+    "@playwright/test": "^1.41.1",
+    "@types/node": "^20.11.5"
+  },
+  "dependencies": {
+    "typescript": "^5.3.3"
   }
 }

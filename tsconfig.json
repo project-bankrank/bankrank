@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "ES2020",
+    "moduleResolution": "Bundler",
+    "target": "ES2020",
+    "sourceMap": true,
+    "baseUrl": "./src",
+    "outDir": "build",
+    "allowJs": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/"],
+  "exclude": ["**/*.spec.ts"]
+}
