@@ -1,6 +1,6 @@
 # Table of Contents
 - [Background](#background)
-- [Project Bank Rank](#project-bankrank)
+- [About Bank Rank](#project-bankrank)
 - [Architecture & Logic Flow](#logic-flow)
 - [Getting Started Locally](#getting-started)
 - [Contribution Guide](#contributing)
@@ -25,7 +25,7 @@ There are many tools and services available which attempt to improve transparenc
 - Incomplete data sets: Other tools may have incomplete data or allow banks to pay for exclusivity, recommending users towards an inferior product
 - Stale Data: Aggregation sites and tools typically batch their updates monthly or quarterly, even though product rates and fees can change daily.  
 
-# Project Bank Rank <a name="project-bankrank"></a>
+# About Bank Rank <a name="project-bankrank"></a>
 
 Bank Rank is made up of 2 main components: A web automation tool and product scripts. The Bank Rank engine leverages [Playwright](https://playwright.dev/) for web automation, which reads the scripts contained in the `productScripts` directory. These scripts tell the Bank Rank engine how to navigate across the web and where to extract information about various financial products. 
 
