@@ -4,9 +4,10 @@
 - [Architecture & Logic Flow](#logic-flow)
 - [Getting Started Locally](#getting-started)
 - [Contribution Guide](#contributing)
+- [Products & Institutions Monitored](#monitoring)
 
 # Background <a name="background"></a>
-There are approximately 4,136 [banks](https://banks.data.fdic.gov/explore/historical/?displayFields=STNAME%2CTOTAL%2CBRANCHES%2CNew_Char%2COFFICES%2CUNIT%2CBRANCHIN&selectedEndDate=2022&selectedReport=CBS&selectedStartDate=1934&selectedStates=0&sortField=YEAR&sortOrder=desc) and 4,645 [credit unions](https://ncua.gov/analysis/credit-union-corporate-call-report-data/quarterly-data-summary-reports) in the United States. These institutions offer [deposit accounts](https://en.wikipedia.org/wiki/Deposit_account), and most commonly offer at least one of the following: [Savings](https://en.wikipedia.org/wiki/Savings_account), [Checking](https://en.wikipedia.org/wiki/Transaction_account), [Money Market](https://en.wikipedia.org/wiki/Money_market_account), or [Certificate of Deposit](https://en.wikipedia.org/wiki/Time_deposit). The primary difference between banks and credit unions is that banks are for-profit institutions whereas credit unions are [not-for-profit, cooperative, tax-exempt organizations](https://en.wikipedia.org/wiki/Credit_unions_in_the_United_States).
+There are approximately 4,136 [banks](https://banks.data.fdic.gov/explore/historical/?displayFields=STNAME%2CTOTAL%2CBRANCHES%2CNew_Char%2COFFICES%2CUNIT%2CBRANCHIN&selectedEndDate=2022&selectedReport=CBS&selectedStartDate=1934&selectedStates=0&sortField=YEAR&sortOrder=desc) and 4,645 [credit unions](https://ncua.gov/analysis/credit-union-corporate-call-report-data/quarterly-data-summary-reports) in the United States. These institutions offer [deposit accounts](https://en.wikipedia.org/wiki/Deposit_account), and most commonly offer at least one of the following: Savings, Checking, Money Market, or Time Deposits. The primary difference between banks and credit unions is that banks are for-profit institutions whereas credit unions are [not-for-profit](https://en.wikipedia.org/wiki/Credit_unions_in_the_United_States), cooperative, tax-exempt organizations.
 
 > Within the scope of this project, we use the term `bank` to refer to all institutions offering federally insured deposit accounts available in the United States, including credit unions and savings and loan institutions. We also use the term `bank account` to refer to any type of deposit account offered by a bank.
 
@@ -119,7 +120,7 @@ Boston, MA
 Las Vegas, NV  
 
 
-### List of Institutions
+# Products & Institutions Monitored <a name="monitoring"></a>
 | Financial Institution          | Checking | Savings | Money Market | Certificate of Deposit | 
 |--------------------------------|----------|---------|--------------|------------------------|
 | America First                  |  -       |   Yes   |       -      |          -             |
