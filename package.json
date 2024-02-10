@@ -5,10 +5,12 @@
   "type": "module",
   "types": "build/scrapingEngine",
   "scripts": {
-    "engine": "npm run compileTypescript && npm run copyNodeModulesToBuildDirectory && npm run installPackagesInBuildDirectory && npm run scrapeProducts",
+    "addScript": "npm run compileTypescript && npm run scaffold",
     "compileTypescript": "tsc",
     "copyNodeModulesToBuildDirectory": "cp package*.json build",
+    "engine": "npm run compileTypescript && npm run copyNodeModulesToBuildDirectory && npm run installPackagesInBuildDirectory && npm run scrapeProducts",
     "installPackagesInBuildDirectory": "cd build && npm ci --production && cd ..",
+    "scaffold": "node build/src/scaffold.js",
     "scrapeProducts": "node build/src/scrapingEngine"
   },
   "keywords": [],
@@ -19,6 +21,7 @@
     "@types/node": "^20.11.5"
   },
   "dependencies": {
+    "@inquirer/prompts": "^4.0.0",
     "typescript": "^5.3.3"
   }
 }

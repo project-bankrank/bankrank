@@ -1,8 +1,25 @@
 - integrate linter
 - integrate prettier
-- Move Monitoring section to a csv file at the root
-- make a script to create a new bank structure and add it to the CSV
-- Finalize the contribution section
+- update scaffolding script to:
+  - Auto-format with prettier
+  - Include function arguments in params
+  - Super nice to have: append to existing files rather than erroring
+
+- Tiers
+  - create src/productScripts/{BankName}/index.ts (if it doesn't exist)
+  - Create src/productScripts/{BankName}/{bankName}{ProductName}.ts (if it doesn't exist)
+  - in src/productScripts/{BankName}/{bankName}{ProductName}.ts, add exported function for tier (default 1) with default arguments
+  - export the function 
+  - import into index.ts
+  - add to tracking.csv
+
 - Make a video for the contribution section
+- Finalize the contribution section
+- Create script to clean up the code copy-pasted from 
+- Create script for adding a tier to an existing product
+  1. Determine if a bank account is being tracked in tracking.csv
+  2. Fork the repo
+  3. Clone
+  4. 
 - Add screenshots for the getting started section
 - Implement unit testing framework (Jest)

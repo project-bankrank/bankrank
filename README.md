@@ -4,7 +4,7 @@
 - [Architecture & Logic Flow](#logic-flow)
 - [Getting Started Locally](#getting-started)
 - [Contribution Guide](#contributing)
-- [Products & Institutions Monitored](#monitoring)
+- [Products & Institutions Monitored](#tracking)
 
 # Background <a name="background"></a>
 There are approximately 4,100 [banks](https://banks.data.fdic.gov/explore/historical/?displayFields=STNAME%2CTOTAL%2CBRANCHES%2CNew_Char%2COFFICES%2CUNIT%2CBRANCHIN&selectedEndDate=2022&selectedReport=CBS&selectedStartDate=1934&selectedStates=0&sortField=YEAR&sortOrder=desc) and 4,600 [credit unions](https://ncua.gov/analysis/credit-union-corporate-call-report-data/quarterly-data-summary-reports) in the United States. These institutions offer [deposit accounts](https://en.wikipedia.org/wiki/Deposit_account), and most commonly offer at least one of the following: Savings, Checking, Money Market, or Time Deposits. The primary difference between banks and credit unions is that banks are for-profit institutions whereas credit unions are [not-for-profit](https://en.wikipedia.org/wiki/Credit_unions_in_the_United_States), cooperative, tax-exempt organizations.
@@ -35,13 +35,13 @@ By maintaining an open list of product scripts, regulators, researchers, and con
 
 Bank Rank is entirely dependent on the contributions of volunteers like you. No matter how technical you are, there are plenty of ways to get involved:
 
-- [Submit New Product Scripts (Technical)](#submitting)
+- [Submit New Product Scripts (Non-Programmers)](#non-programmers-submitting)
 - [Validate Existing Product Scripts (Non-Technical)](#validating)
 - [Engine Enhancements (Technical)](#engine)
 - [Improving Test Coverage (Technical)](#test)
 - [Backlog "Todos" (Technical)](#todos)
 
-### Submit New Product Scripts (Technical)<a name="submitting"></a>
+### Submit New Product Scripts (Non-Programmers)<a name="non-programmers-submitting"></a>
 The best way to contribute to the project is to identify product offerings which are not currently scraped by Bank Rank, and submit them to the project. This process involves recording the steps you would take to normally look up the details about an account using a tool called playwright codegen.
 
 First, identify a product offering which is not included in this listing. You can search for `false` to find products which are not currently being scraped. 
@@ -121,8 +121,5 @@ Boston, MA
 Las Vegas, NV  
 
 
-# Products & Institutions Monitored <a name="monitoring"></a>
-| Financial Institution          | Checking | Savings | Money Market | Certificate of Deposit | 
-|--------------------------------|----------|---------|--------------|------------------------|
-| America First                  |  -       |   Yes   |       -      |          -             |
-| PNC                            |  -       |   Yes   |       -      |          -             |
+# Currently Tracked Products <a name="tracking"></a>
+See `tracking.csv`
