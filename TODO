@@ -1,7 +1,11 @@
 - integrate linter
-- integrate prettier
+  - https://typescript-eslint.io/
+- Configure prettier
+  - 2 spaces, not tabs
+  - separate import lines
+- integrate husky
+  - https://github.com/typicode/husky
 - update scaffolding script to:
-  - Auto-format with prettier
   - Include function arguments in params
   - Super nice to have: append to existing files rather than erroring
 
