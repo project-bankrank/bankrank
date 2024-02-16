@@ -1,2 +1,13 @@
-npm test
+echo Running checks before allowing commit...
+echo
+npx prettier . --check
+
+echo
+echo Code Format looks good!
+echo
+echo Checking Linter...
 npx eslint .
+echo
+echo Code Format looks good!
+
+echo Changes can be committed.

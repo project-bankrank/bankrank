@@ -136,3 +136,8 @@ Las Vegas, NV
 # Currently Tracked Products <a name="tracking"></a>
 
 See `tracking.csv`
+
+## Troubleshooting
+
+- `Code style issues found in # files. Run Prettier to fix.`
+  Prettier is a tool which enforces common formatting across the codebase. In order to commit changes, the prettier tool will check the code to ensure all code is formatted properly. If it detects any errors, it will output a listing of files to review. To solve this, run `npm run prettier` to format the code.
