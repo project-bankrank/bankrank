@@ -26,6 +26,7 @@
     "typescript-eslint": "^7.0.1"
   },
   "dependencies": {
-    "@inquirer/prompts": "^4.0.0"
+    "@inquirer/prompts": "^4.0.0",
+    "@types/inquirer": "^9.0.7"
   }
 }

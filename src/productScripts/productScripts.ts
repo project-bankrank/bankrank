@@ -21,11 +21,9 @@
 */
 
 import americaFirst from "./AmericaFirst/index.js";
-import bankOfAmericaSavings from "./BankOfAmerica/index.js";
 import pncStandardSavings from "./PNC/index.js";
 
 export default [
   ...Object.values(americaFirst),
   ...Object.values(pncStandardSavings),
-  ...Object.values(bankOfAmericaSavings),
 ];

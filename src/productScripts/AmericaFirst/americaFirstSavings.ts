@@ -1,4 +1,5 @@
 import { chromium } from "playwright";
+import { ProductScriptResponseError, ProductScriptResponseSuccess } from "types";
 
 import { fileURLToPath } from "url";
 
@@ -7,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const americaFirstShareSavings1 = async (
   headless = true,
   throwError = false,
-) => {
+): Promise<ProductScriptResponseSuccess | ProductScriptResponseError > => {
   // Throw Error is a variable used to test the error handling.
   if (throwError) throw new Error("Some error");
   const browser = await chromium.launch({ headless }); // Or 'firefox' or 'webkit'.
@@ -58,7 +59,7 @@ const americaFirstShareSavings1 = async (
 
     return {
       institution_name: "America First",
-      account_type: "Savings",
+      account_type: "savings",
       success: true,
       error: false,
       path: __filename,

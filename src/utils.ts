@@ -1,4 +1,4 @@
-import { LogErrors, ProductData } from "./types";
+import { ProductScriptResponseError, ProductScriptResponseSuccess, SystemError } from "./types";
 import fs from "fs";
 
 const outputsPath = "./outputs";
@@ -15,13 +15,13 @@ export const writeBeginningOrEndingErrorLogMessage = (
   fs.appendFile(
     errorLogPath,
     `\n\n==== ${prefix} OF LOGS FROM EXECUTION AT ${errorLogTimestamp} ==== \n`,
-    (err: any) => {
+    (err: SystemError) => {
       if (err) throw err;
     },
   );
 };
 
-export const writeErrorLog = (errorObject: LogErrors) => {
+export const writeErrorLog = (errorObject: ProductScriptResponseError) => {
   const errorStringToWrite = `
   \nStart Error Message ${errorObject?.path}:
   \n${errorObject?.error}
@@ -30,7 +30,7 @@ export const writeErrorLog = (errorObject: LogErrors) => {
     fs.mkdirSync(outputsPath, { recursive: true });
   }
 
-  fs.appendFile(errorLogPath, errorStringToWrite, (err: any) => {
+  fs.appendFile(errorLogPath, errorStringToWrite, (err: SystemError) => {
     if (err) throw err;
   });
 };
@@ -40,12 +40,12 @@ export const createNewBankDataCsv = () => {
     fs.mkdirSync(outputsPath, { recursive: true });
   }
   // Write file will overwrite any existing files, which we want to ensure that we don't replicate data between invocations
-  fs.writeFile(bankDataLogPath, bankDataCsvColumnHeaders, (err: any) => {
+  fs.writeFile(bankDataLogPath, bankDataCsvColumnHeaders, (err: SystemError) => {
     if (err) throw err;
   });
 };
 
-export const writeDataToBankDataCsv = (productData: ProductData) => {
+export const writeDataToBankDataCsv = (productData: ProductScriptResponseSuccess) => {
   const {
     institution_name,
     account_type,
@@ -56,7 +56,7 @@ export const writeDataToBankDataCsv = (productData: ProductData) => {
   } = productData;
   if (product_name && apy && minimum_balance && institution_name) {
     const rowOfData = `${institution_name},${account_type},${product_name},${apy},"${minimum_balance}","${maximum_balance}"\n`;
-    fs.appendFile(bankDataLogPath, rowOfData, (err: any) => {
+    fs.appendFile(bankDataLogPath, rowOfData, (err: SystemError) => {
       if (err) throw err;
     });
   }

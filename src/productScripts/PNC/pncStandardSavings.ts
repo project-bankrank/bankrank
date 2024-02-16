@@ -4,7 +4,7 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 
-const pncStandardSavings = async (headless = true, throwError = false) => {
+const pncStandardSavings1 = async (headless = true, throwError = false) => {
   // Throw Error is a variable used to test the error handling.
   if (throwError) throw new Error("Some error");
   const browser = await chromium.launch({ headless }); // Or 'firefox' or 'webkit'.
@@ -123,4 +123,7 @@ const pncStandardSavings2 = async () => {
   //     script: 'pncStandardSavings1'
   // };
 };
-export default pncStandardSavings;
+export {
+  pncStandardSavings1,
+  pncStandardSavings2
+};

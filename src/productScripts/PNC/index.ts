@@ -1,6 +1,6 @@
-import pncStandardSavings1 from "./pncStandardSavings.js";
+import { pncStandardSavings1, pncStandardSavings2 } from "./pncStandardSavings.js";
 
 export default {
   pncStandardSavings1,
-  // "test": "export"
+  pncStandardSavings2,
 };

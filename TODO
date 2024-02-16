@@ -1,7 +1,4 @@
-- integrate linter
-  - https://typescript-eslint.io/
-- Configure prettier
-  - 2 spaces, not tabs
+
   - separate import lines
 - integrate husky
   - https://github.com/typicode/husky
@@ -10,11 +7,9 @@
   - Super nice to have: append to existing files rather than erroring
 
 - Tiers
-  - create src/productScripts/{BankName}/index.ts (if it doesn't exist)
-  - Create src/productScripts/{BankName}/{bankName}{ProductName}.ts (if it doesn't exist)
-  - in src/productScripts/{BankName}/{bankName}{ProductName}.ts, add exported function for tier (default 1) with default arguments
-  - export the function 
+  -  add exported function for tier (default 1) with default arguments
   - import into index.ts
+  - object.values
   - add to tracking.csv
 
 - Make a video for the contribution section

@@ -12,6 +12,6 @@
     "sourceMap": true,
     "target": "ES2020"
   },
-  "include": ["src/", "scaffold.js"],
+  "include": ["src/"],
   "exclude": ["**/*.spec.ts"]
 }
