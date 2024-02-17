@@ -47,7 +47,7 @@ const camelCaseBankName =
 	pascalCaseBankName.slice(beginningIndexOfRemainingString);
 const productDirectory = `./src/ProductScripts/${pascalCaseBankName}`;
 const productScriptName = camelCaseBankName + productType.split(" ").join("");
-const pathToProductScript = `${productDirectory}/${productScriptName}.js`;
+const pathToProductScript = `${productDirectory}/${productScriptName}.ts`;
 
 // Make the Bank Directory
 if (fs.existsSync(pathToProductScript)) {
@@ -62,26 +62,66 @@ if (fs.existsSync(pathToProductScript)) {
 	fs.writeFileSync(
 		pathToProductScript,
 		`
-    const ${productScriptName}1 = () => {
-      // Todo: Add your Script here, then remove this comment
+		import { chromium } from "playwright";
+		import {
+			ProductScriptResponseError,
+			ProductScriptResponseSuccess,
+		} from "types";
+
+		import { fileURLToPath } from "url";
+
+		const __filename = fileURLToPath(import.meta.url);
+
+    const ${productScriptName}1 = async (headless = true,
+			throwError = false): Promise<ProductScriptResponseSuccess | ProductScriptResponseError> => {
+      try {
+				// Step 1: Add your product script here.
+				// Step 2: Add the following line to productScripts.ts and remove the leading "//":
+						// import ${camelCaseBankName} from "./${pascalCaseBankName}/index.js";
+				// Step 3: Add the following line at the bottom of productScripts.ts and remove the leading "//":
+						// 	...Object.values(${camelCaseBankName}),
+				// Step 4: Edit your script so that u are returning all of the values listed in the return statement
+				// Step 5: Remove all these comments
+
+				return {
+					institution_name: "${bankName.toLowerCase()}",
+					account_type: "${productType.toLowerCase()}",
+					success: true,
+					error: false,
+					path: __filename,
+					apy,
+					product_name,
+					minimum_balance,
+					maximum_balance,
+				};
+			} catch (e) {
+				// Do not include any console logs of errors. Those are handled in the scraper.js file.
+				// Errors encountered in this script should not break, but should log to the .txt file
+				return {
+					success: false,
+					error: e.stack,
+					path: __filename,
+				};
+			}
     }
+
     export { ${productScriptName}1 };`,
 	);
 	// Make the index file
-	if (!fs.existsSync(`${productDirectory}/index.js`)) {
+	if (!fs.existsSync(`${productDirectory}/index.ts`)) {
 		fs.writeFileSync(
-			`${productDirectory}/index.js`,
+			`${productDirectory}/index.ts`,
 			`
-      import { someFunction } from './${productScriptName}.js'
+      import { ${productScriptName}1 } from './${productScriptName}.js'
   
       export default {
-        ...Object.values(someFunction),
+        ...Object.values(${productScriptName}1),
       }`,
 		);
 	}
 	fs.appendFile(
 		"./tracking.csv",
-		`${bankName},${productType},1,${pathToProductScript}\n`,
+		`${bankName},${productType},1,${pathToProductScript}\n, \n`,
 		function (err) {
 			if (err) throw err;
 			console.log("Saved!");

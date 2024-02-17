@@ -5,14 +5,14 @@
 	"type": "module",
 	"types": "build/scrapingEngine",
 	"scripts": {
-		"addScript": "npm run compileTypescript && npm run scaffold && npm run formatCode",
+		"addProduct": "npm run compileTypescript && npm run scaffold && npm run formatCode",
 		"compileTypescript": "tsc",
 		"copyNodeModulesToBuildDirectory": "cp package*.json build",
 		"engine": "npm run compileTypescript && npm run copyNodeModulesToBuildDirectory && npm run installPackagesInBuildDirectory && npm run scrapeProducts",
 		"installPackagesInBuildDirectory": "cd build && npm ci --production && cd ..",
 		"scaffold": "node build/src/scaffold.js",
 		"scrapeProducts": "node build/src/scrapingEngine",
-		"prettier": "npx prettier . --write",
+		"formatCode": "npx prettier . --write",
 		"lint": "npx eslint ."
 	},
 	"keywords": [],
