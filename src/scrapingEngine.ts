@@ -18,6 +18,7 @@ console.log(
 	`\n=== Found ${templatesToScrape.length} products to look up. ===\n`,
 );
 
+const atLeast1Error = 0;
 try {
 	createNewBankDataCsv();
 	// Todo: This may not actually be async since it's in a foreach.
@@ -43,7 +44,7 @@ try {
 				}
 			});
 			writeBeginningOrEndingErrorLogMessage(errorLogTimestamp, false);
-			if (errorLogCount > 0) {
+			if (errorLogCount > atLeast1Error) {
 				console.log(
 					`\n${errorLogCount} error(s) were logged to /outputs/errors.txt. You may want to look into them.`,
 				);

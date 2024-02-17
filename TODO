@@ -1,10 +1,9 @@
-
-  - separate import lines
-- integrate husky
-  - https://github.com/typicode/husky
 - update scaffolding script to:
   - Include function arguments in params
-  - Super nice to have: append to existing files rather than erroring
+  - support adding a tier to an existing product
+    1. Determine if a bank account is being tracked in tracking.csv
+    2. Fork the repo
+    3. Clone
 
 - Tiers
   -  add exported function for tier (default 1) with default arguments
@@ -14,11 +13,8 @@
 
 - Make a video for the contribution section
 - Finalize the contribution section
-- Create script to clean up the code copy-pasted from 
-- Create script for adding a tier to an existing product
-  1. Determine if a bank account is being tracked in tracking.csv
-  2. Fork the repo
-  3. Clone
-  4. 
 - Add screenshots for the getting started section
-- Implement unit testing framework (Jest)
+
+Backlog:
+- Create a linter/prettier rule which will alphabetize or group imports according to a configuration
+- Implement unit testing (Jest)

@@ -32,12 +32,19 @@ const productType = await select({
 	],
 });
 
+const firstCharacterOfWord = 0;
+const beginningIndexOfRemainingString = 1;
 const pascalCaseBankName = bankName
 	.split(" ")
-	.map((i) => i.charAt(0).toUpperCase() + i.slice(1).toLowerCase())
+	.map(
+		(i) =>
+			i.charAt(firstCharacterOfWord).toUpperCase() +
+			i.slice(beginningIndexOfRemainingString).toLowerCase(),
+	)
 	.join("");
 const camelCaseBankName =
-	pascalCaseBankName.charAt(0).toLowerCase() + pascalCaseBankName.slice(1);
+	pascalCaseBankName.charAt(firstCharacterOfWord).toLowerCase() +
+	pascalCaseBankName.slice(beginningIndexOfRemainingString);
 const productDirectory = `./src/ProductScripts/${pascalCaseBankName}`;
 const productScriptName = camelCaseBankName + productType.split(" ").join("");
 const pathToProductScript = `${productDirectory}/${productScriptName}.js`;

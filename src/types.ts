@@ -1,4 +1,3 @@
-// Constants (Todo: If this grows too large, consider moving to a separate file)
 // Interfaces
 export interface LogErrors {
 	path?: string;

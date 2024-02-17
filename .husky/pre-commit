@@ -1,14 +1,13 @@
 echo Running checks before allowing commit...
 echo
 npx prettier . --check
-
 echo
 echo Code Format looks good!
 echo
 echo Checking Linter...
-npx eslint .
+npm run lint
 echo
 echo Code Format looks good!
-
+echo
 echo Changes can be committed.
 echo

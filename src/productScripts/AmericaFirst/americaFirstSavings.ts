@@ -8,6 +8,7 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 
+const beginningValueAfterDollarSign = 1;
 const americaFirstShareSavings1 = async (
 	headless = true,
 	throwError = false,
@@ -42,8 +43,8 @@ const americaFirstShareSavings1 = async (
 			el.textContent.trim(),
 		);
 		const minimum_balance = Math.max(
-			Number(minBalance1.slice(1)),
-			Number(minBalance2.slice(1)),
+			Number(minBalance1.slice(beginningValueAfterDollarSign)),
+			Number(minBalance2.slice(beginningValueAfterDollarSign)),
 		);
 
 		// const maxBalanceSelector = '#Savings-Account-Rates-modelContent > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(5)';
@@ -117,8 +118,8 @@ const americaFirstShareSavings2 = async (
 			el.textContent.trim(),
 		);
 		const minimum_balance = Math.max(
-			Number(minBalance1.slice(1)),
-			Number(minBalance2.slice(1)),
+			Number(minBalance1.slice(beginningValueAfterDollarSign)),
+			Number(minBalance2.slice(beginningValueAfterDollarSign)),
 		);
 
 		// const maxBalanceSelector = '#Savings-Account-Rates-modelContent > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(5)';
