@@ -35,7 +35,7 @@ try {
 			let successfulLogCount = 0;
 
 			responseFromAllTemplates.forEach((response: ProductScriptResponses) => {
-				if (response.success) {
+				if (response?.success) {
 					successfulLogCount++;
 					writeDataToBankDataCsv(response as ProductScriptResponseSuccess); // Todo: There should be a way for us to check that the type is proper without declaring it "As" here.
 				} else {

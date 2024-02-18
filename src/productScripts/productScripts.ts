@@ -22,8 +22,10 @@
 
 import americaFirst from "./AmericaFirst/index.js";
 import pncStandardSavings from "./PNC/index.js";
+import capitalOne from "./CapitalOne/index.js";
 
 export default [
 	...Object.values(americaFirst),
 	...Object.values(pncStandardSavings),
+	...Object.values(capitalOne),
 ];

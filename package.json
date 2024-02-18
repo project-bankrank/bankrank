@@ -13,7 +13,7 @@
 		"scaffold": "node build/src/scaffold.js",
 		"scrapeProducts": "node build/src/scrapingEngine",
 		"formatCode": "npx prettier . --write",
-		"lint": "npx eslint .",
+		"lint": "npx eslint . && npx prettier . --check",
 		"record": "npx playwright codegen"
 	},
 	"keywords": [],
