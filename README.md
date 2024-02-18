@@ -79,4 +79,4 @@ See `tracking.csv` for a listing of individual products currently maintained by 
 ## Troubleshooting
 
 - `Code style issues found in # files. Run Prettier to fix.`
-  Prettier is a tool which enforces common formatting across the codebase. In order to commit changes, the prettier tool will check the code to ensure all code is formatted properly. If it detects any errors, it will output a listing of files to review. To solve this, run `npm run prettier` to format the code.
+  Prettier is a tool which enforces common formatting across the codebase. In order to commit changes, the prettier tool will check the code to ensure all code is formatted properly. If it detects any errors, it will output a listing of files to review. To solve this, run `npm run formatCode` to format the code.

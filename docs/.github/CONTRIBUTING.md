@@ -7,7 +7,6 @@ Some ways to contribute:
 - [Submit New Product Scripts (Moderately Technical)](#addProduct)
 - [Validate Existing Product Scripts (Non-Technical)](#validating)
 - [Engine Enhancements (Technical)](#engine)
-- [Improving Test Coverage (Technical)](#test)
 - [Backlog "Todos" (Technical)](#todos)
 
 ### Submit New Product Scripts (Moderately Technical)<a name="addProduct"></a>
@@ -52,12 +51,22 @@ Steps to Contribute a new product:
 
 ### Validate Existing Product Scripts (Non-Technical)<a name="validating"></a>
 
-You can contribute to the project by validating
+### Engine Enhancements (Technical)<a name="engine"></a>
 
-You can read the written step-by-step instructions below or follow along with our video tutorial [here]().
+The core engine runs each template sequentially and could use improvements. Any and all suggestions would be greatly appreciated, and if you're looking for specific tasks to start on, try one of these;
 
-Prerequistes:
+- Running templates in parallel rather than sequentially
+- Ways to avoid issues executing scripts in headless mode
+- Execute the same template across multiple zip codes to detect geographical descrepancies
+- Better tooling around error handling
 
-- [NodeJS](https://nodejs.org/en0)
-- [NPM](https://www.npmjs.com/) (or other package manager)
-- A local clone of [Bank Rank](https://github.com/project-bankrank/bankrank/tree/main) with all dependencies installed
+### Backlog "Todos"<a name="todos"></a>
+
+- Creating better tutorial videos and writeups
+- Improve data formatting in `bank-data.csv`
+- Implement unit testing (Preferribly using [Jest](https://jestjs.io/))
+- create PR templates for:
+  - validation issues
+  - new product scripts
+- Create a linter/prettier rule which will alphabetize or group imports according to a configuration
+- Sanitize input on scaffolding script so people don't make banks with weird characters in the name (for instance, `;` will break the script)

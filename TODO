@@ -26,13 +26,3 @@ commit and push.
 
 Backlog (in priority order):
 - Get around headless checks
-- Data formatting in bank-data.csv 
-- Better Tutorial videos and writeups
-- Iterate over multiple zip codes
-- run in parallel
-- linter/rule to prevent headless being set to true when committed
-- Implement unit testing (Jest)
-- create PR templates:
-  - adding scripts
-- Create a linter/prettier rule which will alphabetize or group imports according to a configuration
-- Sanitize input on scaffolding script so people don't make banks with weird characters in the name (; will break the script)
