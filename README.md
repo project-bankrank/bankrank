@@ -37,58 +37,7 @@ By maintaining an open list of product scripts, regulators, researchers, and con
 
 # Contributing <a name="contributing"></a>
 
-Bank Rank is entirely dependent on the contributions of volunteers like you. No matter how technical you are, there are plenty of ways to get involved:
-
-- [Submit New Product Scripts (Non-Programmers)](#non-programmers-submitting)
-- [Validate Existing Product Scripts (Non-Technical)](#validating)
-- [Engine Enhancements (Technical)](#engine)
-- [Improving Test Coverage (Technical)](#test)
-- [Backlog "Todos" (Technical)](#todos)
-
-### Submit New Product Scripts (Non-Programmers)<a name="non-programmers-submitting"></a>
-
-The best way to contribute to the project is to identify product offerings which are not currently scraped by Bank Rank, and submit them to the project. This process involves recording the steps you would take to normally look up the details about an account using a tool called playwright codegen.
-
-First, identify a product offering which is not included in this listing. You can search for `false` to find products which are not currently being scraped.
-
-Next, install [playwright](https://playwright.dev/docs/intro#installing-playwright) which will come with a tool called `codegen`.
-
-- `npm init playwright@latest`
-
-Once installed, plan out the steps involved with loading the web page that has the information for the product. When we run codegen, it will record every URL we visit and every interaction with the browser. For instance, your plan may involve the following steps:
-
-1. Navigate to www.wellsFargo.com
-2. Select the `bank` tab and click `savings accounts` from the dropdown
-3. Enter a zip code and click the submit button
-4. Scroll down to the second row of the third table to find the APY
-
-Once you've got your flow prepared, load codegen with `npx playwright codegen`. This will open a new web browser and an "inspector" which will track your flow and automatically write the code needed.
-
-When you are ready to begin, verify that it is recording by checking whether the recording button is red (recording) or gray (not recording). You can click this at any point to pause your recording flow. Start recording and navigate to the page you want. Navigate to the page containing the product information. At a minimum, try to obtain the following pieces of information:
-
-- Name of the product
-- Name of the financial institution
-- minimum account balance to open the account `AND` earn interest `AND` not pay a monthly fee
-- maximum account balance to earn interest
-- Annual Percentage Yield value (not the interest rate)
-
-Stop the recording, and export the script as `Target > NodeJS > Library`.
-
-Go to your editor and create a new file or open the existing file where you will place this script.
-
-Click into the inspector. Highlight everything and copy it, then paste everything in the file.
-
-### Clean Up Phase
-
-<!-- ### Validate Existing Product Scripts (Less-Technical) <a name="validating"></a>
-### Engine Enhancements (Technical) <a name="engine"></a>
-### Improving Test Coverage (Technical) <a name="tests"></a>
-### Backlog "Todos" (Technical) <a name="todos"></a>
-productScripts
-Typescript
-Prettier/Linter
-Unit Tests
-Engine Improvements -->
+See our [contributing documentation](/docs/.github/CONTRIBUTING.md) which contains several ways to contribute, regardless of your technical experience.
 
 # Getting Started <a name="getting-started"></a>
 
@@ -101,7 +50,7 @@ Engine Improvements -->
 3. Install necessary dependencies with `npm i`
 4. Run `npm run engine` to execute the scraping engine on all the productScripts
 5. Successful results are output to `outputs/bank-data.csv`
-   > This file is cleared after every execution
+   > Note: This file is cleared after every execution
 6. Errors are output to `outputs/errors.txt`
    > This file retains all errors, with each execution block starting with `==== START OF LOGS FROM EXECUTION AT {DATE}` and ending with `==== END OF LOGS FROM EXECUTION AT {DATE}`
 

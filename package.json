@@ -10,7 +10,7 @@
 		"copyNodeModulesToBuildDirectory": "cp package*.json build",
 		"engine": "npm run compileTypescript && npm run copyNodeModulesToBuildDirectory && npm run installPackagesInBuildDirectory && npm run scrapeProducts",
 		"installPackagesInBuildDirectory": "cd build && npm ci --production && cd ..",
-		"scaffold": "node build/src/scaffold.js",
+		"scaffold": "node build/src/scaffold.js && npm run formatCode",
 		"scrapeProducts": "node build/src/scrapingEngine",
 		"formatCode": "npx prettier . --write",
 		"lint": "npx eslint . && npx prettier . --check",

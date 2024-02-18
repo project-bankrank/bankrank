@@ -72,7 +72,7 @@ if (fs.existsSync(pathToProductScript)) {
 		import { fileURLToPath } from "url";
 
 		const __filename = fileURLToPath(import.meta.url);
-
+ 
     const ${productScriptName}1 = async (headless = true,
 			throwError = false): Promise<ProductScriptResponseSuccess | ProductScriptResponseError> => {
       if (throwError) throw new Error("Some error");
@@ -125,9 +125,18 @@ if (fs.existsSync(pathToProductScript)) {
       }`,
 		);
 	}
+	const today = new Date();
+	const incrementMonthNumberBy1 = 1;
+	const singleDigitMonthLength = 1;
+	const month =
+		(today.getMonth() + incrementMonthNumberBy1).toString().length ===
+		singleDigitMonthLength
+			? `0${today.getMonth() + incrementMonthNumberBy1}`
+			: today.getMonth() + incrementMonthNumberBy1;
+	const dateString = `${today.getDate()}-${month}-${today.getFullYear()}`;
 	fs.appendFile(
 		"./tracking.csv",
-		`${bankName},${productType},${productType.split(" ").join("")},1,"${pathToProductScript}",\n`,
+		`${bankName},${productType},${productType.split(" ").join("")},1,"${pathToProductScript}",${dateString}\n`,
 		function (err) {
 			if (err) throw err;
 			// eslint-disable-next-line @/no-console
