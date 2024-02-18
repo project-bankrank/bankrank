@@ -36,6 +36,7 @@ export default tseslint.config(
 			"@typescript-eslint/no-require-imports": ["error"],
 			"@typescript-eslint/prefer-for-of": ["error"],
 			"@typescript-eslint/prefer-literal-enum-member": ["error"],
+			"@/no-console": ["error"],
 		},
 	},
 );

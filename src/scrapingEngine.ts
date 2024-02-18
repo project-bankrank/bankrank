@@ -12,8 +12,9 @@ import {
 	createNewBankDataCsv,
 	writeDataToBankDataCsv,
 } from "./utils.js";
-
+// eslint-disable-next-line @/no-console
 console.log(`=== Preparing Scraping Engine. ===`);
+// eslint-disable-next-line @/no-console
 console.log(
 	`\n=== Found ${templatesToScrape.length} products to look up. ===\n`,
 );
@@ -45,16 +46,20 @@ try {
 			});
 			writeBeginningOrEndingErrorLogMessage(errorLogTimestamp, false);
 			if (errorLogCount > atLeast1Error) {
+				// eslint-disable-next-line @/no-console
 				console.log(
 					`\n${errorLogCount} error(s) were logged to /outputs/errors.txt. You may want to look into them.`,
 				);
 			}
+			// eslint-disable-next-line @/no-console
 			console.log(
 				`\nFinished Sourcing Data. Successfully obtained data for ${successfulLogCount} product(s).`,
 			);
 			return;
 		})
+		// eslint-disable-next-line @/no-console
 		.catch((e) => console.log("eee: ", e));
 } catch (e) {
+	// eslint-disable-next-line @/no-console
 	console.log("\n === We encountered an error. See below: === \n", e);
 }

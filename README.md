@@ -123,19 +123,9 @@ When executed, the scraping engine will scrape every product tier and output the
 - Template files follow the pattern `{institutionName}{productName}.ts`
 - Template function names follow the pattern `{institutionName}{productName}{tier}`
 
-### List of Zip Codes
-
-94507 - Alamo, CA  
-Chicago, IL  
-New York, New York,  
-Atlanta, GA,  
-Fort Worth, TX  
-Boston, MA  
-Las Vegas, NV
-
 # Currently Tracked Products <a name="tracking"></a>
 
-See `tracking.csv`
+See `tracking.csv` for a listing of individual products currently maintained by Bank Rank.
 
 ## Troubleshooting
 

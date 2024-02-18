@@ -51,6 +51,7 @@ const pathToProductScript = `${productDirectory}/${productScriptName}.ts`;
 
 // Make the Bank Directory
 if (fs.existsSync(pathToProductScript)) {
+	// eslint-disable-next-line @/no-console
 	console.log(
 		`This bank/product combination already exists at ${pathToProductScript}`,
 	);
@@ -126,9 +127,10 @@ if (fs.existsSync(pathToProductScript)) {
 	}
 	fs.appendFile(
 		"./tracking.csv",
-		`${bankName},${productType},1,${pathToProductScript},\n`,
+		`${bankName},${productType},${productType.split(" ").join("")},1,"${pathToProductScript}",\n`,
 		function (err) {
 			if (err) throw err;
+			// eslint-disable-next-line @/no-console
 			console.log("Saved!");
 		},
 	);

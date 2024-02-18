@@ -1,2 +1,4 @@
-Financial Institution, Product, Tier, Path, Notes
-capital one,Savings,1,./src/ProductScripts/CapitalOne/capitalOneSavings.ts,
+Financial_Institution, Product_Type, Product_Name, Tier, Path, Notes
+America First,Savings,Share Savings,1,./src/ProductScripts/AmericaFirst/americaFirstSavings.ts",
+PNC,Savings,Standard Savings,1,./src/ProductScripts/PNC/pncStandardSavings.ts",
+capital one,Savings,360 Performance Savings,1,./src/ProductScripts/CapitalOne/capitalOneSavings.ts",

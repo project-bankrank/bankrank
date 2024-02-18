@@ -1,9 +1,36 @@
+Identify Product to add 
+capitalone.com perforamcne savigns
+- Check tracking.csv
+npm run addProduct
+npm run record
+
+- record *red
+- navigate
+- click on apy
+- min/maxbalance
+- product name
+  - Show overriding this value to account for styling and formatting 
+- stop recording
+- Target NodeJs > Library
+copy all
+paste, follow comments, using inerHtml first on clicks.
+Run it
+check the bank-data, massage data if needed
+- Check tracking.csv
+- once it looks good, npm run lint, fix issues, npm run formatCode.
+commit and push.
 
 - Make a video for the contribution section
 - Finalize the contribution section
 - Add screenshots for the getting started section
 
 Backlog (in priority order):
+- Get around headless checks
+- Data formatting in bank-data.csv 
+- Better Tutorial videos and writeups
+- Iterate over multiple zip codes
+- run in parallel
+- linter/rule to prevent headless being set to true when committed
 - Implement unit testing (Jest)
 - create PR templates:
   - adding scripts

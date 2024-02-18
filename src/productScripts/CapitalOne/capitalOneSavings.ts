@@ -9,7 +9,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 
 const capitalOneSavings1 = async (
-	headless = false,
+	headless = true,
 	throwError = false,
 ): Promise<ProductScriptResponseSuccess | ProductScriptResponseError> => {
 	if (throwError) throw new Error("Some error");
@@ -18,20 +18,26 @@ const capitalOneSavings1 = async (
 	try {
 		const context = await browser.newContext();
 		const page = await context.newPage();
-		await page.goto("https://www.capitalone.com/");
-		await page.locator("#bank").click();
-		await page.getByRole("link", { name: "Performance Savings™" }).click();
-		const product_name = await page
-			.getByRole("heading", { name: "Performance Savings" })
-			.innerText();
+		await page.goto("https://www.capitalone.com/bank");
+		await page
+			.locator("shared-secondary-navigation")
+			.getByRole("link", { name: "Performance Savings" })
+			.click();
+		const product_name = (
+			await page
+				.getByRole("heading", { name: "Performance Savings" })
+				.textContent()
+		).trim();
 		await page.getByLabel("Skip to Rate section").click();
-		const minimum_balance = await page
-			.getByRole("cell", { name: "Any balance" })
-			.innerText();
-		const maximum_balance = await page
-			.getByRole("cell", { name: "Any balance" })
-			.innerText();
-		const apy = await page.getByRole("cell", { name: "%" }).innerText();
+		const minimum_balance = (
+			await page.getByRole("cell", { name: "Any balance" }).innerHTML()
+		).trim();
+		const maximum_balance = (
+			await page.getByRole("cell", { name: "Any balance" }).innerHTML()
+		).trim();
+		const apy = (
+			await page.getByRole("cell", { name: "%" }).innerText()
+		).trim();
 		await context.close();
 		await browser.close();
 
@@ -54,6 +60,8 @@ const capitalOneSavings1 = async (
 			error: e.stack,
 			path: __filename,
 		};
+	} finally {
+		await browser.close();
 	}
 };
 
