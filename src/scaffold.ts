@@ -74,7 +74,10 @@ if (fs.existsSync(pathToProductScript)) {
 
     const ${productScriptName}1 = async (headless = true,
 			throwError = false): Promise<ProductScriptResponseSuccess | ProductScriptResponseError> => {
-      try {
+      if (throwError) throw new Error("Some error");
+			const browser = await chromium.launch({ headless }); // Or 'firefox' or 'webkit'.
+
+			try {
 				// Step 1: Add your product script here.
 				// Step 2: Add the following line to productScripts.ts and remove the leading "//":
 						// import ${camelCaseBankName} from "./${pascalCaseBankName}/index.js";
@@ -102,6 +105,8 @@ if (fs.existsSync(pathToProductScript)) {
 					error: e.stack,
 					path: __filename,
 				};
+			} finally {
+				await browser.close();
 			}
     }
 
@@ -115,13 +120,13 @@ if (fs.existsSync(pathToProductScript)) {
       import { ${productScriptName}1 } from './${productScriptName}.js'
   
       export default {
-        ...Object.values(${productScriptName}1),
+        ${productScriptName}1,
       }`,
 		);
 	}
 	fs.appendFile(
 		"./tracking.csv",
-		`${bankName},${productType},1,${pathToProductScript}\n, \n`,
+		`${bankName},${productType},1,${pathToProductScript},\n`,
 		function (err) {
 			if (err) throw err;
 			console.log("Saved!");
