@@ -13,7 +13,7 @@ Some ways to contribute:
 
 The best way to contribute to the project is to identify product offerings which are not currently monitored by Bank Rank and submit scripts to track those products to the project. This process involves recording the steps you would take to normally look up the details about an account using a tool called [playwright codegen](https://playwright.dev/docs/codegen-intro#running-codegen).
 
-You can read the written step-by-step instructions below or follow along with our video tutorial [here]().
+<!-- You can read the written step-by-step instructions below or follow along with our video tutorial [here]().  -->
 
 Prerequistes:
 
@@ -50,9 +50,18 @@ Steps to Contribute a new product:
 8. Follow the steps outlined in that file to import and export the functions into the rest of the engine.
 
 9. Validate your changes by running `npm run engine`. Your product should appear in `/outputs/bank-data.csv`. If you encounter errors, they should be listed in `outputs/errors.txt`
+
    > By default, the engine runs your script in headless mode. You can run it outside headless mode by updating the function's parameter to be `headless = false` rather than `headless = true`.
 
+10. Once you have validated that the script worked, you may need to massage the data to ensure that you are obtaining the proper values from the elements selected. You can test whether your items are pulling the proper values by re-running the `npm run engine` script, which will recreate the `bank-data.csv` file.
+
+11. When you are ready to contribute the changes, ensure that your product was properly added to the `tracking.csv` file, commit your changes, and open a PR from your fork.
+
 ### Validate Existing Product Scripts (Non-Technical)<a name="validating"></a>
+
+The [tracking.csv](https://github.com/project-bankrank/bankrank/blob/main/tracking.csv) file contains a listing of each individual product being tracked by Bank Rank. The cell `Last_Validation` contains the date when product script was last validated. You can contribute to Bank Rank by validating scripts which have not been validated in some time.
+
+Once you have performed the validation, please [open a pull request](https://github.com/project-bankrank/bankrank/compare) or [create an issue](https://github.com/project-bankrank/bankrank/issues/new) describing the product(s) validated, the process in which you validated them, as well as screenshots or video recordings as evidence for reviewers.
 
 ### Engine Enhancements (Technical)<a name="engine"></a>
 

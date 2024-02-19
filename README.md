@@ -35,7 +35,7 @@ Bank Rank is made up of 2 main components: A web automation tool and product scr
 
 By maintaining an open list of product scripts, regulators, researchers, and consumers can access to the entire market of financial products whenever they want, while avoiding all of the [existing problems](#existing-problems) with current solutions. And by being open sourced, the Bank Rank community can provide updates to the product scripts as banks change their web sites.
 
-# Contributing <a name="contributing"></a>
+# Contribution Guide <a name="contributing"></a>
 
 See our [contributing documentation](/docs/.github/CONTRIBUTING.md) which contains several ways to contribute, regardless of your technical experience.
 

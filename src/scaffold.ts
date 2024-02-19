@@ -84,8 +84,12 @@ if (fs.existsSync(pathToProductScript)) {
 						// import ${camelCaseBankName} from "./${pascalCaseBankName}/index.js";
 				// Step 3: Add the following line at the bottom of productScripts.ts and remove the leading "//":
 						// 	...Object.values(${camelCaseBankName}),
-				// Step 4: Edit your script so that u are returning all of the values listed in the return statement
-				// Step 5: Remove all these comments
+				// Step 4: Add the following line at the top of "./${pascalCaseBankName}/index.js" and remove the leading "//":
+						// 	import { ${productScriptName}1 } from "./${productScriptName}/index.js";
+				// Step 5: Ensure that your script is in the export of "./${pascalCaseBankName}/index.js"
+						// export default { ${productScriptName}1 };
+				// Step 6: Edit your script so that u are returning all of the values listed in the return statement. Replace the ".click()" methods with ".textContent()" or ".innerHTML()" to get the contents for you to edit.
+				// Step 7: Remove all these comments
 
 				return {
 					institution_name: "${bankName.toLowerCase()}",
