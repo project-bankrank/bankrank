@@ -13,7 +13,7 @@ There are approximately 4,600 [banks](https://www.fdic.gov/analysis/quarterly-ba
 
 > Within the scope of this project, we use the term `bank` to refer to all institutions offering federally insured deposit accounts available in the United States, including credit unions and savings and loan institutions. We also use the term `bank account` to refer to any type of deposit account offered by a bank.
 
-It is common for banks to offer multiple tiers of an account in order to incentivize customers to deposit more money with the bank. To give an approximation of how large the deposit account marketplace is: if each bank were to offer 2 tiers of each type of bank account, there would be ~64,000 accounts in the United States, each with different rates and fees which can change at any time, for any reason.
+It is common for banks to offer multiple tiers of an account in order to incentivize customers to deposit more money with the bank. To give an approximation of how large the deposit account marketplace is: if each bank were to offer 2 tiers of each type of bank account, there would be over 70,000 accounts in the United States, each with different rates and fees which can change at any time, for any reason.
 
 Because these accounts are regulated and federally insured, they are effectively risk-free financial commodities, which compete primarily on fees and interest rates. With the technological advancements in mobile technology, banks are no longer tied to geographic regions and can compete nationally for deposits, which has dramatically increased competition.
 
