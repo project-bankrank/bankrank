@@ -1,4 +1,4 @@
 Financial_Institution, Product_Type, Product_Name, Tier, Path, Last_Validation
-America First,Savings,Share Savings,1,./src/ProductScripts/AmericaFirst/americaFirstSavings.ts",18-02-2024
-PNC,Savings,Standard Savings,1,./src/ProductScripts/PNC/pncStandardSavings.ts",18-02-2024
-capital one,Savings,360 Performance Savings,1,./src/ProductScripts/CapitalOne/capitalOneSavings.ts",18-02-2024
+America First,Savings,Share Savings,1,./src/ProductScripts/AmericaFirst/americaFirstSavings.ts,18-02-2024
+PNC,Savings,Standard Savings,1,./src/ProductScripts/PNC/pncStandardSavings.ts,18-02-2024
+capital one,Savings,360 Performance Savings,1,./src/ProductScripts/CapitalOne/capitalOneSavings.ts,18-02-2024
