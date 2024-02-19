@@ -24,14 +24,14 @@ Despite the increased competition, the largest banks offer some of the worst int
 There are many tools and services available which attempt to improve transparency in deposit account rates and fees, but all struggle from one or more of the following limitations:
 
 - Closed source/black-box methodologies: Many bank aggregation sites do not disclose how they rank or rate bank accounts. Bank Rank seeks to aggregate as much data as possible so users can make an informed decision, and because it is open source, consumers can see how many products are being compared and the methodologies involved in sourcing the data.
-- Conflicts of interest: many bank review sites will receive referral bonuses for referring people to certain accounts. This creates a conflict of interest, since these sites ultimately serve the banks that pay them, not the consumers doing research
-- Pay-to-win features: Some sites will aggregate products, but provide premium placement for sponsored products, putting them ahead of products which are objectively better
-- Incomplete data sets: Other tools may have incomplete data or allow banks to pay for exclusivity, recommending users towards an inferior product
-- Stale Data: Aggregation sites and tools typically batch their updates monthly or quarterly, even though product rates and fees can change daily.
+- Conflicts of interest: many bank review sites will receive referral bonuses for referring people to certain accounts. This creates a conflict of interest, since these sites ultimately serve the banks that pay them, not the consumers doing research.
+- Pay-to-win features: Some sites will aggregate products, but provide premium placement for sponsored products, prioritizing them ahead of products which are objectively better for the user.
+- Incomplete data sets: Tools may have incomplete data or allow banks to pay for exclusivity, thereby recommending inferior products to users.
+- Stale Data: Aggregation sites and tools batch their updates monthly or quarterly, even though product rates and fees can change daily.
 
 # About Bank Rank <a name="project-bankrank"></a>
 
-Bank Rank is made up of 2 main components: A web automation tool and product scripts. The Bank Rank engine leverages [Playwright](https://playwright.dev/) for web automation, which reads the scripts contained in the `productScripts` directory. These scripts tell the Bank Rank engine how to navigate across the web and where to extract information about various financial products.
+Bank Rank is made up of 2 main components: A web automation tool and product scripts. The Bank Rank engine l everages [Playwright](https://playwright.dev/) for web automation, which reads the scripts contained in the `productScripts` directory. These scripts tell the Bank Rank engine how to navigate across the web and where to extract information about various financial products.
 
 By maintaining an open list of product scripts, regulators, researchers, and consumers can access to the entire market of financial products whenever they want, while avoiding all of the [existing problems](#existing-problems) with current solutions. And by being open sourced, the Bank Rank community can provide updates to the product scripts as banks change their web sites.
 
@@ -52,31 +52,35 @@ See our [contributing documentation](/docs/.github/CONTRIBUTING.md) which contai
 5. Successful results are output to `outputs/bank-data.csv`
    > Note: This file is cleared after every execution
 6. Errors are output to `outputs/errors.txt`
-   > This file retains all errors, with each execution block starting with `==== START OF LOGS FROM EXECUTION AT {DATE}` and ending with `==== END OF LOGS FROM EXECUTION AT {DATE}`
+   > This file retains errors between invocations, with each execution block starting with  
+   > `==== START OF LOGS FROM EXECUTION AT {DATE} ====` and ending with  
+   > `==== END OF LOGS FROM EXECUTION AT {DATE} ====`
 
 # Architecture & Logic Flow <a name="logic-flow"></a>
 
 The `package.json` file contains a script called `engine` which can be executed with `npm run engine`. This runs 4 sub-scripts which: compile the Typescript code; copy the packages to the compiled directory; install missing package dependencies; and executes the scraping engine `scrapingEngine.ts`. This engine reads the instructions for scraping product information from each `productScript` exported from `productScripts/productScripts.ts`.
 
-The `productScripts` directory contains subdirectories for each bank. Each subdirectory contains a file for each product offered by the bank, such as `Savings`, `Checking` or `Time Deposit`, as well as an `index.ts` file to make exporting the `productScripts` more organized. The naming convention for these files is `{institutionName}{brandedProductName}.ts`. Occasionally, a bank will offer multiple types of the same product, such as a `regular savings` and a `high-yield savings`. Each product offering has its own file, so in this case there would be two different files: `{institutionName}{regularSavings}.ts` and `{institutionName}{highYieldSavings}.ts`.
+The `productScripts` directory contains subdirectories for each bank. Each subdirectory contains a file for each product offered by the bank, such as `Savings`, `Checking` or `Time Deposit`, as well as an `index.ts` file to make exporting the `productScripts` more organized. The naming convention for these files is `{bankName}{brandedProductName}.ts`. Occasionally, a bank will offer multiple types of the same product, such as a `regular savings` and a `high-yield savings`. Each product offering gets its own file, so in this case there would be two different files: `{bankName}{regularSavings}.ts` and `{bankName}{highYieldSavings}.ts`.
 
-Each product file contains functions to scrape the various tiers of the product offering. Some banks only offer 1 tier for a product, in which case, there would only be one function exported from that product file. Others offer multiple tiers, which will be captured in separate functions, following the naming convention `{institutionName}{productName}{productTier}`. For example, `bankOfAmericaBasicSavings.ts` may export 2 functions: `bankOfAmericaBasicSavings1` and `bankOfAmericaBasicSavings2` in order to capture the 2 tiers of offerings for the `Basic Savings` account offered by `Bank of America`.
+Each product file contains functions to scrape the various tiers of the product offering. Some banks only offer 1 tier for a product, in which case, there would only be one function exported from that product file. Others offer multiple tiers, which will be captured in separate functions within the same file, following the naming convention `{bankName}{productName}{productTier}`.
 
-When executed, the scraping engine will scrape every product tier and output the results in `outputs/bank-data.csv`. Informational messages will be logged to your console, and any error logs will be captured in `outputs/errors.txt`.
+For example, `bankOfAmericaBasicSavings.ts` may export 2 functions: `bankOfAmericaBasicSavings1` and `bankOfAmericaBasicSavings2` in order to capture the 2 tiers of offerings for the `Basic Savings` account offered by `Bank of America`.
+
+When executed, the scraping engine will scrape every product tier and output the results in `outputs/bank-data.csv`. Informational messages will be logged to your terminal and errors will be captured in `outputs/errors.txt`.
 
 ### Conventions
 
-- variable, function, and file names use `camelCase`
-- attributes which correspond with a database field use `lower_case_with_underscores`
+- Attributes which correspond with a database field use `lower_case_with_underscores`
 - Template Directories use `PascalCase`
-- Template files follow the pattern `{institutionName}{productName}.ts`
-- Template function names follow the pattern `{institutionName}{productName}{tier}`
+- Template Files follow the pattern `{bankName}{productName}.ts`
+- Template function names follow the pattern `{bankName}{productName}{tier}`
+- Variable, Function, and File names use `camelCase`
 
 # Currently Tracked Products <a name="tracking"></a>
 
-See `tracking.csv` for a listing of individual products currently maintained by Bank Rank.
+See [tracking.csv](https://github.com/project-bankrank/bankrank/blob/main/tracking.csv) for a listing of individual products currently maintained by Bank Rank.
 
-## Troubleshooting
+## Troubleshooting Error Messages
 
 - `Code style issues found in # files. Run Prettier to fix.`
   Prettier is a tool which enforces common formatting across the codebase. In order to commit changes, the prettier tool will check the code to ensure all code is formatted properly. If it detects any errors, it will output a listing of files to review. To solve this, run `npm run formatCode` to format the code.
