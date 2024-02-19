@@ -86,7 +86,8 @@ if (fs.existsSync(pathToProductScript)) {
 						// 	...Object.values(${camelCaseBankName}),
 				// Step 4: Add the following line at the top of "./${pascalCaseBankName}/index.js" and remove the leading "//":
 						// 	import { ${productScriptName}1 } from "./${productScriptName}/index.js";
-				// Step 5: Add your script to the export of "./${pascalCaseBankName}/index.js"
+				// Step 5: Ensure that your script is in the export of "./${pascalCaseBankName}/index.js"
+						// export default { ${productScriptName}1 };
 				// Step 6: Edit your script so that u are returning all of the values listed in the return statement. Replace the ".click()" methods with ".textContent()" or ".innerHTML()" to get the contents for you to edit.
 				// Step 7: Remove all these comments
 
