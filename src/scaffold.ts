@@ -136,7 +136,7 @@ if (fs.existsSync(pathToProductScript)) {
 	const dateString = `${today.getDate()}-${month}-${today.getFullYear()}`;
 	fs.appendFile(
 		"./tracking.csv",
-		`${bankName},${productType},${productType.split(" ").join("")},1,"${pathToProductScript}",${dateString}\n`,
+		`${bankName},${productType},${productType.split(" ").join("")},1,${pathToProductScript},${dateString}\n`,
 		function (err) {
 			if (err) throw err;
 			// eslint-disable-next-line @/no-console
